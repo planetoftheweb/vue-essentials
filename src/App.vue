@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container mt-5">
     <h1>My Shop</h1>
+    <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
     <product-list :maximum="maximum" :products="products" @add="addItem"></product-list>
   </div>
 </template>
@@ -8,12 +9,14 @@
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ProductList from "./components/ProductList.vue";
+import PriceSlider from "./components/PriceSlider.vue";
 
 export default {
   name: "app",
   data: function() {
     return {
       maximum: 99,
+      sliderStatus: true,
       cart: [],
       products: null
     };
@@ -39,7 +42,8 @@ export default {
   },
   components: {
     FontAwesomeIcon,
-    ProductList
+    ProductList,
+    PriceSlider
   },
   mounted: function() {
     fetch("https://hplussport.com/api/products/order/price")
