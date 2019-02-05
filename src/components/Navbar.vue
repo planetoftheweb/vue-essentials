@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light fixed-top">
     <div class="navbar-text ml-auto d-flex">
-      <button class="btn btn-sm btn-outline-success" @click="$emit('toggle')">
+      <button class="btn btn-sm btn-outline-success" @click="$parent.$emit('toggle')">
         <i class="fas fa-dollar-sign"></i>
         <font-awesome-icon icon="dollar-sign"></font-awesome-icon>
       </button>
@@ -27,7 +27,7 @@
               </b>
               <a
                 href="#"
-                @click.stop="$emit('delete', index)"
+                @click.stop="$parent.$emit('delete', index)"
                 class="badge badge-danger text-white"
               >-</a>
             </div>
