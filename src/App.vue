@@ -1,6 +1,7 @@
 <template>
   <div id="app" class="container mt-5">
     <h1>My Shop</h1>
+    <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal"></navbar>
     <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
     <product-list :maximum="maximum" :products="products" @add="addItem"></product-list>
   </div>
@@ -10,9 +11,16 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ProductList from "./components/ProductList.vue";
 import PriceSlider from "./components/PriceSlider.vue";
+import Navbar from "./components/Navbar.vue";
 
 export default {
   name: "app",
+  components: {
+    FontAwesomeIcon,
+    ProductList,
+    PriceSlider,
+    Navbar
+  },
   data: function() {
     return {
       maximum: 99,
@@ -39,11 +47,6 @@ export default {
         this.cart.push({ product: product, qty: 1 });
       }
     }
-  },
-  components: {
-    FontAwesomeIcon,
-    ProductList,
-    PriceSlider
   },
   mounted: function() {
     fetch("https://hplussport.com/api/products/order/price")

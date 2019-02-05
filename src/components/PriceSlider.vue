@@ -2,7 +2,7 @@
   <transition name="fade">
     <div v-if="sliderStatus">
       <div class="align-items-center" :class="sliderState">
-        <label :class="labelArr" for="formMax">max</label>
+        <label class="font-weight-bold mr-2" for="formMax">max</label>
         <input
           type="text"
           id="formMax"
