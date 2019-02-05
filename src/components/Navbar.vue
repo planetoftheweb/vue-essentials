@@ -1,8 +1,9 @@
 <template>
   <nav class="navbar navbar-light fixed-top">
     <div class="navbar-text ml-auto d-flex">
-      <button class="btn btn-sm btn-outline-success" @click="sliderStatus = !sliderStatus">
+      <button class="btn btn-sm btn-outline-success" @click="$emit('toggle')">
         <i class="fas fa-dollar-sign"></i>
+        <font-awesome-icon icon="dollar-sign"></font-awesome-icon>
       </button>
       <div class="dropdown ml-2" v-if="cart.length>0">
         <button
