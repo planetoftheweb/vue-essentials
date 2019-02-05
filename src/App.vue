@@ -1,7 +1,13 @@
 <template>
   <div id="app" class="container mt-5">
     <h1>My Shop</h1>
-    <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal" @toggle="toggleSliderStatus"></navbar>
+    <navbar
+      :cart="cart"
+      :cartQty="cartQty"
+      :cartTotal="cartTotal"
+      @toggle="toggleSliderStatus"
+      @delete="deleteItem"
+    ></navbar>
     <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
     <product-list :maximum="maximum" :products="products" @add="addItem"></product-list>
   </div>
@@ -32,14 +38,14 @@ export default {
   computed: {
     cartTotal: function() {
       let sum = 0;
-      for (key in this.cart) {
+      for (let key in this.cart) {
         sum = sum + this.cart[key].product.price * this.cart[key].qty;
       }
       return sum;
     },
     cartQty: function() {
       let qty = 0;
-      for (key in this.cart) {
+      for (let key in this.cart) {
         qty = qty + this.cart[key].qty;
       }
       return qty;
