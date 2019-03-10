@@ -7,8 +7,8 @@
       :sliderStatus="sliderStatus"
       :maximum.sync="maximum"
       :products="products"
-      @delete="deleteItem"
       @add="addItem"
+      @delete="deleteItem"
       @toggle="toggleSliderStatus"
     ></router-view>
   </div>

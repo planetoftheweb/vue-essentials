@@ -33,7 +33,7 @@
             </div>
           </div>
           <router-link
-            class="btn btn-sm btn-outline-info text-dark float-right mr-4 my-2"
+            class="btn btn-sm btn-outline-info text-dark float-right mr-4"
             to="/checkout"
           >Checkout</router-link>
         </div>
