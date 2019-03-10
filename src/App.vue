@@ -4,26 +4,19 @@
       :cart="cart"
       :cartQty="cartQty"
       :cartTotal="cartTotal"
-      @delete="deleteItem"
-      @add="addItem"
       :sliderStatus="sliderStatus"
       :maximum.sync="maximum"
       :products="products"
+      @add="addItem"
+      @delete="deleteItem"
       @toggle="toggleSliderStatus"
     ></router-view>
   </div>
 </template>
 
 <script>
-import Products from "./components/Products.vue";
-import Checkout from "./components/Checkout.vue";
-
 export default {
   name: "app",
-  components: {
-    Products,
-    Checkout
-  },
   data: function() {
     return {
       maximum: 99,
