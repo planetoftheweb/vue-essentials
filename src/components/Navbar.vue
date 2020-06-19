@@ -2,7 +2,6 @@
   <nav class="navbar navbar-light fixed-top">
     <div class="navbar-text ml-auto d-flex">
       <button class="btn btn-sm btn-outline-success" @click="$parent.$emit('toggle')">
-        <i class="fas fa-dollar-sign"></i>
         <font-awesome-icon icon="dollar-sign"></font-awesome-icon>
       </button>
       <div class="dropdown ml-2" v-if="cart.length>0">
@@ -14,7 +13,7 @@
           aria-expanded="false"
         >
           <span class="badge badge-pill badge-light">{{cartQty}}</span>
-          <i class="fas fa-shopping-cart mx-2"></i>
+          <font-awesome-icon icon="shopping-cart" class="mx-2"></font-awesome-icon>
           <price :value="Number(cartTotal)"></price>
         </button>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="cartDropdown">
